@@ -3,11 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Bamfield Coast Lots — Pacific Acreage on Vancouver Island</title>
-<meta name="description" content="Thirteen fee-simple acreage lots on South Bamfield Road. Old-growth forest, Barkley Sound, the West Coast Trail. From $428,000 CAD." />
+<title>The Bamfield Coast Lots — Acreage Lots on Vancouver Island's West Coast</title>
+<meta name="description" content="Thirteen fee-simple acreage lots (1 to 2 acres) on South Bamfield Road, near Barkley Sound and the West Coast Trail. From $428,000 CAD. Disclosure Statement to be filed under REDMA." />
+<meta property="og:title" content="The Bamfield Coast Lots" />
+<meta property="og:description" content="Thirteen fee-simple acreage lots on South Bamfield Road, Bamfield, BC. Register your interest." />
+<meta property="og:image" content="https://bamfieldcoast.com/assets/sunset_orange.jpg" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#1f3328" />
+<link rel="icon" href="assets/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<script>document.documentElement.classList.add('js');</script>
 <style>
   :root {
     --ink: #1a2620;
@@ -118,7 +125,7 @@
   .hero-bg {
     position: absolute;
     inset: 0;
-    background: url('assets/old_growth.jpg') center/cover no-repeat;
+    background: url('assets/sunset_orange.jpg') center 62%/cover no-repeat;
     transform: scale(1.05);
     animation: kenburns 20s ease-out forwards;
   }
@@ -1280,58 +1287,198 @@
     .footer-grid { grid-template-columns: 1fr; gap: 40px; }
     .footer-bottom { flex-direction: column; }
   }
+
+  /* ============ v2 ADDITIONS (Nov 2026) ============ */
+  .hero-bg { background-image: url('assets/sunset_orange.jpg'); background-position: center 62%; }
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(26,38,32,0.55) 0%, rgba(26,38,32,0.15) 35%, rgba(26,38,32,0.88) 100%);
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-bottom: 26px; padding: 8px 16px 8px 12px;
+    border: 1px solid rgba(244,239,227,0.35); border-radius: 100px;
+    background: rgba(26,38,32,0.35); backdrop-filter: blur(6px);
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    opacity: 0; animation: fadeUp 0.9s 0.2s ease forwards;
+  }
+  .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #8fbf9a; box-shadow: 0 0 0 4px rgba(143,191,154,0.25); }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; opacity: 0; animation: fadeUp 1s 1s ease forwards; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 28px; border-radius: 100px; text-decoration: none;
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500;
+    transition: transform .25s ease, background .25s ease, color .25s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-light { background: var(--paper); color: var(--ink); }
+  .btn-light:hover { background: var(--sand-light); }
+  .btn-ghost { border: 1px solid rgba(244,239,227,0.6); color: var(--paper); }
+  .btn-ghost:hover { background: rgba(244,239,227,0.12); }
+  .photo-note {
+    position: absolute; right: 48px; bottom: 28px; z-index: 2;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.55; color: var(--paper);
+  }
+
+  /* Mobile menu */
+  .menu-toggle { display: none; background: none; border: 0; color: inherit; cursor: pointer; padding: 6px; }
+  .menu-toggle svg { display: block; }
+  nav .menu-toggle { color: var(--paper); }
+  nav.scrolled .menu-toggle, nav.open .menu-toggle { color: var(--ink); }
+
+  /* Lots table v2 */
+  .lots-display { grid-template-columns: 1.35fr 1fr; }
+  .lot-table { max-width: none; }
+  .lot-table .lot-num { width: auto; }
+  .lot-table .lot-m2 { font-size: 13px; color: var(--ink-soft); text-align: right; padding-right: 18px; }
+  .lot-table .lot-area { width: auto; }
+  .lot-table .lot-note { white-space: normal; padding-left: 16px; }
+  .tag {
+    display: inline-block; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 4px 8px; border-radius: 3px; background: rgba(168,92,60,0.1); color: var(--rust); font-weight: 600;
+  }
+  .tag.green { background: rgba(74,100,80,0.1); color: var(--cedar); }
+  .lot-legend { margin-top: 22px; display: grid; gap: 10px; font-size: 13px; line-height: 1.6; color: var(--ink-soft); }
+  .lot-legend .tag { margin-right: 8px; }
+
+  /* Servicing / due diligence */
+  .services { background: var(--sand-light); }
+  .services-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 64px; }
+  .services-header h2 { font-family: 'Fraunces', serif; font-weight: 300; font-size: clamp(36px, 4.8vw, 66px); line-height: 1.05; letter-spacing: -0.02em; }
+  .services-header h2 em { font-style: italic; color: var(--cedar); }
+  .services-header p { font-size: 16.5px; line-height: 1.7; color: var(--ink-soft); max-width: 500px; }
+  .svc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .svc { background: var(--paper); padding: 30px 26px 32px; }
+  .svc-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+  .svc-icon { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--cedar); }
+  .status { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; padding: 4px 9px; border-radius: 100px; }
+  .status.yes { background: rgba(74,100,80,0.12); color: var(--moss); }
+  .status.no { background: rgba(168,92,60,0.12); color: var(--rust); }
+  .status.info { background: rgba(90,122,130,0.14); color: var(--tide-deep); }
+  .svc h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 21px; margin-bottom: 10px; }
+  .svc p { font-size: 13.8px; line-height: 1.62; color: var(--ink-soft); }
+  .svc-foot { margin-top: 36px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; }
+  .callout { align-self: start; border-left: 2px solid var(--rust); padding: 4px 0 4px 22px; font-size: 15px; line-height: 1.7; color: var(--ink); }
+  .callout strong { font-weight: 600; }
+  .also { font-size: 13.5px; line-height: 1.7; color: var(--ink-soft); }
+  .also h4 { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--cedar); margin-bottom: 10px; font-weight: 600; }
+  .also ul { list-style: none; }
+  .also li { padding: 5px 0; border-bottom: 1px solid var(--line); }
+
+  /* At a glance */
+  .glance-list { list-style: none; margin-top: 8px; max-width: 540px; }
+  .glance-list li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(244,239,227,0.14); font-size: 15.5px; line-height: 1.6; opacity: 0.88; }
+  .glance-list li::before { content: '—'; color: var(--sand); }
+
+  /* Contact cards */
+  .contact-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 760px; margin: 64px auto 0; text-align: left; }
+  .contact-card { border: 1px solid var(--line); padding: 26px 28px; background: rgba(237,229,208,0.45); }
+  .contact-card h5 { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--cedar); font-weight: 600; margin-bottom: 12px; }
+  .contact-card .name { font-family: 'Fraunces', serif; font-size: 21px; margin-bottom: 6px; }
+  .contact-card p { font-size: 14px; line-height: 1.65; color: var(--ink-soft); }
+  .contact-card a { color: var(--ink); }
+
+  .disclosure-inner .ds-box {
+    border: 1px solid var(--line); background: var(--sand-light); padding: 22px 26px; margin-bottom: 22px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  }
+  .ds-box div small { display: block; font-size: 9.5px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--cedar); margin-bottom: 6px; font-weight: 600; }
+  .ds-box div span { font-family: 'Fraunces', serif; font-size: 17px; }
+
+  .g-detail1, .g-detail2, .g-detail3 { grid-column: span 4; }
+  /* Progressive enhancement: content is visible without JS */
+  html:not(.js) .reveal { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-bg { animation: none; }
+    .reveal { opacity: 1 !important; transform: none !important; transition: none; }
+    .hero-eyebrow, .hero h1, .hero-meta, .hero-badge, .hero-actions, .scroll-indicator { animation: none; opacity: 1; }
+  }
+
+  @media (max-width: 1100px) {
+    .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 900px) {
+    .menu-toggle { display: block; }
+    .nav-links { position: fixed; top: 64px; left: 12px; right: 12px; flex-direction: column; align-items: stretch; gap: 0;
+      background: var(--paper); border: 1px solid var(--line); padding: 8px 20px; box-shadow: 0 20px 40px rgba(0,0,0,.15);
+      display: none; }
+    nav.open .nav-links { display: flex; }
+    nav.open { background: var(--paper); }
+    nav.open .nav-mark { color: var(--ink); }
+    .nav-links a, .nav-links a:not(.nav-cta) { display: block; color: var(--ink) !important; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .nav-links a.nav-cta { border: 0; padding: 14px 0; border-radius: 0; }
+    .photo-note { right: 24px; bottom: 14px; }
+    .services-header, .svc-foot { grid-template-columns: 1fr; gap: 28px; }
+    .svc-grid { grid-template-columns: 1fr; }
+    .contact-cards { grid-template-columns: 1fr; }
+    .disclosure-inner .ds-box { grid-template-columns: 1fr; }
+    .lot-table thead { display: table-header-group; }
+    .lot-table tbody td { padding: 10px 4px; }
+    .lot-table .lot-m2 { display: none; }
+    .lot-table thead th.m2 { display: none; }
+    .hero-actions .btn { padding: 14px 22px; }
+    .g-detail1, .g-detail2, .g-detail3 { grid-column: span 6; }
+  }
 </style>
 </head>
 <body>
 
 <nav id="nav">
-  <div class="nav-mark">
-    <img src="assets/logo.png" alt="" />
+  <a href="#top" class="nav-mark" style="text-decoration:none;">
+    <img src="assets/logo.png" alt="" width="40" height="40" />
     <div class="wordmark">
       The Bamfield Coast Lots
       <small>Bamfield · Vancouver Island</small>
     </div>
-  </div>
-  <div class="nav-links">
+  </a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <div class="nav-links" id="navLinks">
     <a href="#why">Why Bamfield</a>
     <a href="#nearby">Nearby</a>
     <a href="#access">Getting Here</a>
     <a href="#lots">The Lots</a>
+    <a href="#services">Servicing</a>
     <a href="#contact" class="nav-cta">Inquire</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
+<section class="hero" id="top">
+  <div class="hero-bg" role="img" aria-label="Sunset over Bamfield Inlet"></div>
   <div class="hero-overlay"></div>
   <div class="hero-grain"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Vancouver Island · Barkley Sound · Est. 2026</div>
-    <h1>Thirteen titled acres<br/>on the <em>wild edge</em> of Vancouver Island.</h1>
+    <div class="hero-badge"><span class="dot"></span>Now registering interest</div>
+    <div class="hero-eyebrow">Vancouver Island · Barkley Sound</div>
+    <h1>Thirteen titled acreage lots<br/>on the <em>wild edge</em> of Vancouver Island.</h1>
     <div class="hero-meta">
       <div>
         <small>Location</small>
-        <p>South Bamfield Road,<br/>Vancouver Island, BC</p>
+        <p>South Bamfield Road,<br/>Bamfield, BC</p>
       </div>
       <div>
         <small>Lot Sizes</small>
-        <p>1 to 2 acres,<br/>fee simple</p>
+        <p>1.0 to 2.0 acres,<br/>fee simple</p>
       </div>
       <div>
         <small>From</small>
-        <p>$428,000 CAD</p>
+        <p>$428,000 CAD<sup style="font-size:12px;">*</sup></p>
       </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-light">Register your interest</a>
+      <a href="#lots" class="btn btn-ghost">View the lots</a>
     </div>
   </div>
   <div class="scroll-indicator">Scroll</div>
+  <div class="photo-note">Photo: Bamfield Inlet at sunset</div>
 </section>
 
 <!-- INTRO -->
 <section class="intro">
   <div class="container">
-    <h2>Where the road ends,<br/>and the <em>old growth begins.</em><br/>Thirteen titled lots on the<br/>west coast of Vancouver Island —<br/>the last phase of a quiet subdivision<br/>most of the world has never heard of.</h2>
-    <div class="signature">— South Bamfield Road, 2026</div>
+    <h2>Where the road runs out,<br/>the <em>coast begins.</em><br/>Thirteen titled lots on the<br/>west coast of Vancouver Island —<br/>a quiet acreage subdivision<br/>minutes from Pachena Bay and Barkley Sound.</h2>
   </div>
 </section>
 
@@ -1340,33 +1487,33 @@
   <div class="container">
     <div class="why-header reveal">
       <h2>The case for <em>Bamfield.</em></h2>
-      <p>Long before this listing, Bamfield was already known to the people who matter — researchers, fishermen, hikers, and a small group of locals who built lives at the entrance to Barkley Sound. The land has not been priced for outsiders. It has been priced for people who understand what it is.</p>
+      <p>Long before this offering, Bamfield was already known to the people who love this coast — researchers, fishermen, hikers, and the locals who built lives at the entrance to Barkley Sound. It is small, remote, and unhurried, and that is the point.</p>
     </div>
     <div class="why-grid">
       <div class="why-item reveal">
         <span class="num">i.</span>
         <h3>Gateway to the West Coast Trail</h3>
-        <p>The northern terminus of one of Canada's most iconic multi-day hikes — Pacific Rim National Park Reserve — begins minutes from your door.</p>
+        <p>The northern trailhead of one of Canada's most iconic multi-day hikes, in Pacific Rim National Park Reserve, is a short drive south at Pachena Bay.</p>
       </div>
       <div class="why-item reveal">
         <span class="num">ii.</span>
         <h3>World-class sport fishing</h3>
-        <p>Chinook salmon, halibut, and lingcod in the rich waters of Barkley Sound. Charter operators run from the village marina year-round.</p>
+        <p>Chinook salmon, halibut, and lingcod in the rich waters of Barkley Sound, with local charter operators running out of the village.</p>
       </div>
       <div class="why-item reveal">
         <span class="num">iii.</span>
         <h3>The Marine Sciences Centre</h3>
-        <p>Bamfield is home to one of the leading ocean research institutions in the country — anchoring the community with year-round scientific presence.</p>
+        <p>Bamfield is home to one of the country's leading ocean research stations — anchoring the community with a year-round scientific presence.</p>
       </div>
       <div class="why-item reveal">
         <span class="num">iv.</span>
-        <h3>Wild and walkable</h3>
-        <p>Kayaking, diving, surfing, and whale watching from a village you can cross on foot. Eagles overhead, old-growth in the back lot, ocean air every morning.</p>
+        <h3>Wild, close at hand</h3>
+        <p>Kayaking, diving, surfing, and whale watching nearby. Eagles overhead, tide pools at low water, ocean air every morning.</p>
       </div>
       <div class="why-item reveal">
         <span class="num">v.</span>
-        <h3>A fraction of the coast cost</h3>
-        <p>Comparable acreage on the Sunshine Coast, the Gulf Islands, or Tofino sells for multiples of these prices. Bamfield's value has not yet caught up to its setting.</p>
+        <h3>Room to build</h3>
+        <p>One to two acres per lot, zoned RA2 (Acreage Residential) for a single-family home, home occupations, and accessory buildings — with water, power, and telecom available along South Bamfield Road.</p>
       </div>
       <div class="why-item reveal">
         <span class="num">vi.</span>
@@ -1381,14 +1528,14 @@
 <section class="nearby" id="nearby">
   <div class="container">
     <div class="nearby-header reveal">
-      <h2>Beaches, boats, and a <em>working coast</em> at your door.</h2>
-      <p>Bamfield's draw is what surrounds it. Within a short drive, walk, or boat ride: empty Pacific beaches, world-class fishing, an island archipelago that draws kayakers from around the world, and a small village of charters, resorts, and restaurants.</p>
+      <h2>Beaches, boats, and a <em>working coast</em> nearby.</h2>
+      <p>Bamfield's draw is what surrounds it. Within a short drive, walk, or boat ride: open Pacific beaches, world-class fishing, an island archipelago that draws kayakers from around the world, and a small village of charters, lodges, and cafés.</p>
     </div>
 
     <div class="tourist-map-composition">
       <figure class="tourist-map-figure reveal">
         <div class="tourist-map-image-wrap">
-          <img src="assets/tourist_map.jpg" alt="Tourist map of Bamfield showing Bamfield West and Bamfield East villages, Brady's Beach, the Blowhole, the Boardwalk, Bamfield Inlet, Grappler Inlet, the Marine Sciences Centre, Mills Peninsula, and the road to Port Alberni and the Pacific Rim National Park Reserve. A red marker indicates the location of the lots on South Bamfield Road." />
+          <img src="assets/tourist_map.jpg" width="1219" height="1388" loading="lazy" alt="Tourist map of Bamfield showing Bamfield West and Bamfield East, Brady's Beach, the Boardwalk, Bamfield Inlet, the Marine Sciences Centre, and the road to Port Alberni and Pacific Rim National Park Reserve. A marker shows the lots on South Bamfield Road." />
           <span class="lots-marker" aria-hidden="true"></span>
           <span class="lots-marker-label">The Lots</span>
         </div>
@@ -1399,12 +1546,11 @@
       </figure>
       <div class="tourist-map-prose reveal">
         <div class="prose-eyebrow">A village divided by water</div>
-        <h3>Two halves of one harbour, <em>stitched by a five-minute boat ride.</em></h3>
-        <p>Bamfield East holds the road, the marina, the school, and the route to the West Coast Trail. Bamfield West — accessible only by water — is where the historic boardwalk runs along the inlet, past lodges, charter docks, and the path to Brady's Beach.</p>
-        <p>The lots sit on South Bamfield Road, just below the village, with Pachena Bay and the trailhead minutes further south.</p>
+        <h3>Two halves of one harbour, <em>stitched by a short boat ride.</em></h3>
+        <p>Bamfield East holds the road, the marina, the school, and the route to the West Coast Trail. Bamfield West — reached only by water — is where the historic boardwalk runs along the inlet, past lodges, charter docks, and the path to Brady's Beach.</p>
+        <p>The lots sit inland on South Bamfield Road, about 88.6 km southwest of Port Alberni, with Pachena Bay and the trailhead a few minutes further south.</p>
         <div class="map-pullquote">
-          "You don't really live in Bamfield. You live <em>between</em> a forest and the open Pacific, with a small village in the middle to remind you that other people exist."
-          <span>— A long-time resident</span>
+          Between a forest and the open Pacific, with a small village in the middle to remind you that other people exist.
         </div>
       </div>
     </div>
@@ -1413,32 +1559,32 @@
       <div class="nearby-item reveal">
         <div class="distance">~5–7 km south</div>
         <h3>Pachena Bay</h3>
-        <p>A 1.2-kilometre crescent of fine sand facing the open Pacific, on Huu-ay-aht First Nation territory. The northern terminus of the West Coast Trail and one of the most striking beaches on Vancouver Island.</p>
+        <p>A long crescent of fine sand facing the open Pacific, on Huu-ay-aht First Nations territory. The northern trailhead of the West Coast Trail and one of the most striking beaches on Vancouver Island.</p>
       </div>
       <div class="nearby-item reveal">
         <div class="distance">Across the inlet</div>
         <h3>Brady's Beach</h3>
-        <p>A short water-taxi ride to West Bamfield, then a 20-minute walk through second-growth forest from the West Government Dock. Dramatic sandstone sea stacks, tide pools, and a blowhole. Often empty. Locally beloved.</p>
+        <p>A short water-taxi ride to West Bamfield, then a walk through second-growth forest from the West Government Dock. Sandstone sea stacks, tide pools, and a blowhole. Often empty. Locally beloved.</p>
       </div>
       <div class="nearby-item reveal">
         <div class="distance">Day-hike</div>
         <h3>Keeha &amp; Tapaltos Beaches</h3>
-        <p>Two of the wildest beaches on the south island, reached by rugged trail through coastal rainforest. Rarely visited, frequently spectacular. The Tapaltos route also leads to Cape Beale Lighthouse.</p>
+        <p>Two of the wildest beaches on the south island, reached by rugged trail through coastal rainforest. The Tapaltos route also leads toward Cape Beale Lighthouse.</p>
       </div>
       <div class="nearby-item reveal">
-        <div class="distance">~12 km west by boat</div>
+        <div class="distance">By boat</div>
         <h3>Broken Group Islands</h3>
-        <p>Over a hundred islands scattered across Barkley Sound — a marine kayaker's mecca, designated as part of Pacific Rim National Park Reserve. Sea lions, orcas, eagles, and uninhabited beaches.</p>
+        <p>Over a hundred islands and islets scattered across Barkley Sound — a sea kayaker's destination within Pacific Rim National Park Reserve. Sea lions, eagles, and quiet beaches.</p>
       </div>
       <div class="nearby-item reveal">
         <div class="distance">In village</div>
         <h3>The Boardwalk</h3>
-        <p>A historic 1940s wooden boardwalk along West Bamfield's waterfront, connecting homes, docks, and the West Government Dock. Reached by a five-minute water taxi from East Bamfield.</p>
+        <p>The historic wooden boardwalk along West Bamfield's waterfront, connecting homes, docks, lodges, and cafés. Reached by water taxi from East Bamfield.</p>
       </div>
       <div class="nearby-item reveal">
         <div class="distance">In village</div>
         <h3>Bamfield Marine Sciences Centre</h3>
-        <p>One of Canada's leading ocean research stations, anchoring the community with year-round scientific presence and seasonal public tours of the labs and aquarium.</p>
+        <p>One of Canada's leading ocean research stations, with a year-round scientific presence and public programs through the season.</p>
       </div>
     </div>
 
@@ -1458,11 +1604,11 @@
       <div class="category reveal">
         <h4>On foot</h4>
         <ul>
-          <li>West Coast Trail (77 km)</li>
+          <li>West Coast Trail (75 km)</li>
           <li>Cape Beale Lighthouse</li>
-          <li>Bamfield Blowhole walk</li>
+          <li>Brady's Beach &amp; blowhole</li>
           <li>Tide-pool exploration</li>
-          <li>Old-growth forest hikes</li>
+          <li>Coastal rainforest trails</li>
           <li>Beachcombing</li>
           <li>Wildlife photography</li>
         </ul>
@@ -1471,8 +1617,8 @@
         <h4>Wildlife</h4>
         <ul>
           <li>Gray whale migration</li>
-          <li>Resident humpbacks</li>
-          <li>Orca pods (transient)</li>
+          <li>Humpback whales</li>
+          <li>Orca (transient)</li>
           <li>Bald eagles</li>
           <li>Steller sea lions</li>
           <li>River &amp; sea otters</li>
@@ -1484,11 +1630,11 @@
         <ul>
           <li>Bamfield Point Resort</li>
           <li>Pachena Bay Campground</li>
-          <li>Local lodges &amp; B&amp;Bs</li>
-          <li>The pub at Tides Tavern</li>
+          <li>Boardwalk lodges &amp; inns</li>
+          <li>The Pub, East Bamfield</li>
           <li>Boardwalk Bistro &amp; cafés</li>
-          <li>General store &amp; market</li>
-          <li>Marina &amp; fuel</li>
+          <li>Tides &amp; Trails Market</li>
+          <li>Moorage &amp; fuel</li>
         </ul>
       </div>
     </div>
@@ -1500,30 +1646,30 @@
   <div class="container access-grid">
     <div class="reveal">
       <div class="section-label">Getting Here</div>
-      <h2>Remote enough <em>to feel like</em> remote. Close enough to live in.</h2>
-      <p>Bamfield is reached by paved and well-maintained gravel road from Port Alberni, by water taxi across the Sound, or by air. The drive is part of the appeal — old-growth canopy, mountain switchbacks, and a steady release from the pace of the mainland.</p>
-      <p>From Vancouver, plan a day. From Victoria, half a day. From Seattle, a long but cinematic weekend trip.</p>
+      <h2>Remote enough <em>to feel</em> remote. Close enough to live in.</h2>
+      <p>Bamfield is reached by road from Port Alberni — the Bamfield Road was fully chip-sealed in 2023 — by the MV Frances Barkley down the Alberni Inlet, or by charter floatplane. The drive is part of the appeal: forest canopy, lakes, and a steady release from the pace of the mainland.</p>
+      <p>From Vancouver, plan a day with the ferry. From Victoria, about half a day.</p>
     </div>
     <div class="access-routes reveal">
       <div class="route">
         <div class="route-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 12l4-4M3 12l4 4M21 6v12"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 20L10 4M19 20L14 4M12 6v2M12 11v2M12 16v2"/></svg>
         </div>
         <div>
           <h4>From Port Alberni</h4>
-          <span>Paved &amp; gravel road, ~100 km</span>
+          <span>Bamfield Road, chip-sealed · ~89 km to the lots</span>
         </div>
         <div class="duration">~2 hrs</div>
       </div>
       <div class="route">
         <div class="route-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20s2-2 5-2 5 2 7 2 5-2 8-2M3 14l9-9 9 9M5 14v6M19 14v6M12 5v15"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 19s2-2 5-2 5 2 7 2 5-2 8-2M4 15l2-5h12l2 5M9 10V6h6v4"/></svg>
         </div>
         <div>
-          <h4>By water taxi</h4>
-          <span>Port Alberni → Bamfield via Inlet</span>
+          <h4>MV Frances Barkley</h4>
+          <span>Lady Rose Marine Services · Port Alberni → Bamfield</span>
         </div>
-        <div class="duration">Daily</div>
+        <div class="duration">Tue · Thu · Sat</div>
       </div>
       <div class="route">
         <div class="route-icon">
@@ -1531,7 +1677,7 @@
         </div>
         <div>
           <h4>From Victoria</h4>
-          <span>Via Hwy 4, scenic island route</span>
+          <span>Hwy 1 &amp; 19 north, Hwy 4 to Port Alberni, then Bamfield Road</span>
         </div>
         <div class="duration">~5 hrs</div>
       </div>
@@ -1541,9 +1687,9 @@
         </div>
         <div>
           <h4>By air</h4>
-          <span>Float plane from Vancouver / Seattle</span>
+          <span>Charter floatplane to Bamfield Inlet</span>
         </div>
-        <div class="duration">~1 hr</div>
+        <div class="duration">By charter</div>
       </div>
     </div>
   </div>
@@ -1557,50 +1703,40 @@
       <h2>Quiet mornings.<br/>Tide tables. <em>Long sunsets.</em></h2>
     </div>
     <div class="gallery">
-      <!-- Row A: hero opener + macro detail -->
       <div class="gallery-item g-hero reveal">
-        <img src="assets/sunset_boat.jpg" alt="Sunset over Bamfield Inlet with a boat heading home" />
+        <img src="assets/sunset_boat.jpg" loading="lazy" alt="Sunset over Bamfield Inlet with a boat heading home" />
         <div class="caption">A boat home, last light over the inlet</div>
       </div>
       <div class="gallery-item g-macro reveal">
-        <img src="assets/urchins_macro.jpg" alt="Red sea urchins in a Bamfield tide pool with snail and clam" />
+        <img src="assets/urchins_macro.jpg" loading="lazy" alt="Red sea urchins in a Bamfield tide pool with snail and clam" />
         <div class="caption">Red urchins, low tide</div>
       </div>
-
-      <!-- Row B: vista, quote, vista -->
       <div class="gallery-item g-vista1 reveal">
-        <img src="assets/pacific_beach.jpg" alt="Quiet rocky beach on the Bamfield coast at low tide, looking out across the inlet" />
+        <img src="assets/pacific_beach.jpg" loading="lazy" alt="Quiet rocky beach on the Bamfield coast at low tide" />
         <div class="caption">A morning on the coast</div>
       </div>
       <div class="gallery-item gallery-quote g-quote reveal">
         <p>"There are sunsets in Bamfield<br/>that don't repeat anywhere else<br/>on the coast."</p>
       </div>
       <div class="gallery-item g-vista2 reveal">
-        <img src="assets/sunset_orange.jpg" alt="Dramatic orange sunset over Bamfield village and inlet" />
-        <div class="caption">Wildfire skies, west harbour</div>
+        <img src="assets/surge_channel.jpg" loading="lazy" alt="Tidal surge channel rushing between rocks framed by conifers" />
+        <div class="caption">Surge channel, Cape Beale side</div>
       </div>
-
-      <!-- Row C: four detail tiles -->
       <div class="gallery-item g-detail1 reveal">
-        <img src="assets/seastar_solo.jpg" alt="Single ochre sea star resting on red seaweed and rock" />
+        <img src="assets/seastar_solo.jpg" loading="lazy" alt="Single sea star resting on red seaweed and rock" />
         <div class="caption">Sea star, west shore</div>
       </div>
       <div class="gallery-item g-detail2 reveal">
-        <img src="assets/tidepool_aggregating.jpg" alt="Aggregating green anemones in a Bamfield tide pool" />
+        <img src="assets/tidepool_aggregating.jpg" loading="lazy" alt="Aggregating green anemones in a Bamfield tide pool" />
         <div class="caption">Aggregating anemones</div>
       </div>
       <div class="gallery-item g-detail3 reveal">
-        <img src="assets/surge_channel.jpg" alt="Tidal surge channel rushing between rocks framed by old-growth conifers" />
-        <div class="caption">Surge channel, Cape Beale side</div>
-      </div>
-      <div class="gallery-item g-detail4 reveal">
-        <!-- Sport fishing stock photo. Source: Unsplash, stephen momot (@ah360).
-             Free to use under the Unsplash License. Photo: https://unsplash.com/photos/UivGzIDhVyw -->
-        <img src="assets/salmon_fishing.jpg" alt="Sport fishing rods racked at the stern of a charter boat with churning wake behind" />
+        <!-- Sport fishing stock photo. Source: Unsplash, stephen momot (@ah360). Unsplash License. https://unsplash.com/photos/UivGzIDhVyw -->
+        <img src="assets/salmon_fishing.jpg" loading="lazy" alt="Sport fishing rods racked at the stern of a charter boat" />
         <div class="caption">Charter rods, ready for chinook</div>
       </div>
     </div>
-    <div class="gallery-credit reveal">Photography by Tamara Dee</div>
+    <div class="gallery-credit reveal">Photography of the surrounding region by Tamara Dee · fishing photo via Unsplash</div>
   </div>
 </section>
 
@@ -1610,7 +1746,7 @@
     <div class="lots-header reveal">
       <h2>Thirteen lots.<br/><em>One rare opportunity.</em></h2>
       <div>
-        <p>All thirteen parcels are titled, fee-simple, and registered. Each is zoned RA1 / RA2 for single-family residential use, ranging from one to two acres.</p>
+        <p>All thirteen lots are fee simple and registered under Plan EPP141779, with titles issued April 20, 2026 and no mortgages or liens on title. Each is zoned RA2 (Acreage Residential) for one single-family dwelling, home occupations, and accessory buildings.</p>
         <div class="price-from">
           <span class="price-from-label">From</span>
           <span class="price-from-value">$428,000<sup>*</sup></span>
@@ -1621,63 +1757,165 @@
       <div class="map-col reveal">
         <div class="map-wrap">
           <div class="map-caption">Site Plan — South Bamfield Road</div>
-          <img src="assets/site_map.jpg" alt="Subdivision site map showing all 13 lots along South Bamfield Road" />
+          <img src="assets/site_map.jpg" width="1288" height="952" loading="lazy" alt="Subdivision site plan showing Lots 1 to 13 along the south side of South Bamfield Road" />
         </div>
-        <div class="map-footnote">North oriented up-right</div>
+        <div class="map-footnote">Illustrative only — refer to registered Plan EPP141779</div>
       </div>
 
-      <table class="lot-table reveal">
-        <thead>
-          <tr>
-            <th>Lot</th>
-            <th style="text-align:right;">Acres</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td class="lot-num">01</td><td class="lot-area">1.001 acres</td></tr>
-          <tr><td class="lot-num">02</td><td class="lot-area">1.001 acres</td></tr>
-          <tr><td class="lot-num">03</td><td class="lot-area">1.052 acres</td></tr>
-          <tr><td class="lot-num">04</td><td class="lot-area">1.056 acres</td></tr>
-          <tr><td class="lot-num">05</td><td class="lot-area">1.378 acres</td></tr>
-          <tr><td class="lot-num">06</td><td class="lot-area">1.965 acres</td></tr>
-          <tr><td class="lot-num">07</td><td class="lot-area">1.602 acres</td></tr>
-          <tr><td class="lot-num">08</td><td class="lot-area">1.218 acres</td></tr>
-          <tr><td class="lot-num">09</td><td class="lot-area">1.027 acres</td></tr>
-          <tr><td class="lot-num">10</td><td class="lot-area">1.065 acres</td></tr>
-          <tr><td class="lot-num">11</td><td class="lot-area">1.001 acres</td></tr>
-          <tr><td class="lot-num">12</td><td class="lot-area">1.001 acres</td></tr>
-          <tr><td class="lot-num">13</td><td class="lot-area">1.001 acres</td></tr>
-        </tbody>
-      </table>
+      <div class="reveal">
+        <table class="lot-table">
+          <thead>
+            <tr>
+              <th>Lot</th>
+              <th class="m2" style="text-align:right; padding-right:18px;">m²</th>
+              <th style="text-align:right;">Acres</th>
+              <th style="text-align:left; padding-left:16px;">On title</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="lot-num">01</td><td class="lot-m2">4,050</td><td class="lot-area">1.001</td><td class="lot-note"></td></tr>
+            <tr><td class="lot-num">02</td><td class="lot-m2">4,050</td><td class="lot-area">1.001</td><td class="lot-note"></td></tr>
+            <tr><td class="lot-num">03</td><td class="lot-m2">4,256</td><td class="lot-area">1.052</td><td class="lot-note"></td></tr>
+            <tr><td class="lot-num">04</td><td class="lot-m2">4,275</td><td class="lot-area">1.056</td><td class="lot-note"></td></tr>
+            <tr><td class="lot-num">05</td><td class="lot-m2">5,575</td><td class="lot-area">1.378</td><td class="lot-note"></td></tr>
+            <tr><td class="lot-num">06</td><td class="lot-m2">7,951</td><td class="lot-area">1.965</td><td class="lot-note"><span class="tag green">Shared driveway</span></td></tr>
+            <tr><td class="lot-num">07</td><td class="lot-m2">6,485</td><td class="lot-area">1.602</td><td class="lot-note"><span class="tag green">Shared driveway</span></td></tr>
+            <tr><td class="lot-num">08</td><td class="lot-m2">4,930</td><td class="lot-area">1.218</td><td class="lot-note"></td></tr>
+            <tr><td class="lot-num">09</td><td class="lot-m2">4,155</td><td class="lot-area">1.027</td><td class="lot-note"></td></tr>
+            <tr><td class="lot-num">10</td><td class="lot-m2">4,310</td><td class="lot-area">1.065</td><td class="lot-note"></td></tr>
+            <tr><td class="lot-num">11</td><td class="lot-m2">4,050</td><td class="lot-area">1.001</td><td class="lot-note"></td></tr>
+            <tr><td class="lot-num">12</td><td class="lot-m2">4,050</td><td class="lot-area">1.001</td><td class="lot-note"><span class="tag">CMT covenant</span></td></tr>
+            <tr><td class="lot-num">13</td><td class="lot-m2">4,050</td><td class="lot-area">1.001</td><td class="lot-note"><span class="tag">CMT covenant</span></td></tr>
+          </tbody>
+        </table>
+        <div class="lot-legend">
+          <div><span class="tag green">Shared driveway</span>Lots 6 and 7 share a common driveway from South Bamfield Road under reciprocal easements. Owners split upkeep 50/50, each carries at least $2,000,000 liability insurance naming the other, and a buyer on resale must assume these obligations.</div>
+          <div><span class="tag">CMT covenant</span>Lots 12 and 13 each contain a small protected area (69.0 m² and 212.8 m²) around culturally modified trees. No construction or ground disturbance is allowed in those areas, and the covenant passes to each future owner.</div>
+        </div>
+      </div>
     </div>
-    <div class="price-note reveal">* Indicative starting price only. Pricing, terms, and lot availability are not an offer to sell, are subject to change, and will be set out in the Disclosure Statement filed under the Real Estate Development Marketing Act (BC) prior to any sale.</div>
+    <div class="price-note reveal">* Starting price. Pricing and availability are subject to change; contact the listing brokerage for current pricing on each lot. Lot areas are from the registered titles under Plan EPP141779.</div>
   </div>
 </section>
 
-<!-- INVESTMENT -->
+<!-- SERVICING / DUE DILIGENCE -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <h2>The practical <em>details.</em></h2>
+      <p>These are bare-land lots. Utilities run along South Bamfield Road, but no services have been installed to any lot. Each purchaser arranges, permits, and pays for their own connections, septic, and driveway. Here is what's available, summarized from the Developer's due-diligence reports.</p>
+    </div>
+    <div class="svc-grid reveal">
+      <div class="svc">
+        <div class="svc-top">
+          <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3s6 7 6 11a6 6 0 01-12 0c0-4 6-11 6-11z"/></svg></div>
+          <span class="status yes">Available</span>
+        </div>
+        <h3>Water</h3>
+        <p>Regional District (ACRD) Bamfield Water System main on South Bamfield Road. The ACRD has confirmed all 13 lots can connect. Per lot: $200 application fee plus $5,000 connection and meter charge (or actual cost if higher), then metered rates.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-top">
+          <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+          <span class="status yes">Available</span>
+        </div>
+        <h3>Electricity</h3>
+        <p>A BC Hydro distribution line runs past the lots with individual service connections available. Depending on the lot, the owner may pay for a transformer and/or road-crossing pole.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-top">
+          <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12a10 10 0 0114 0M8 15a6 6 0 018 0M12 19h.01"/></svg></div>
+          <span class="status yes">Available</span>
+        </div>
+        <h3>Phone &amp; internet</h3>
+        <p>TELUS shows 5G and LTE coverage at the location. TELUS will service each lot by wireless smart hub or fibre when service is requested, and does not charge to extend service to a lot.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-top">
+          <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg></div>
+          <span class="status yes">In service area</span>
+        </div>
+        <h3>Fire protection</h3>
+        <p>Within the Bamfield Volunteer Fire Department area, served by hydrants. Fire flow is about 30 L/s, below the 60 L/s design guideline, which may affect house design, sprinklers, or insurance.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-top">
+          <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 18h16M6 18V9l6-4 6 4v9M10 18v-5h4v5"/></svg></div>
+          <span class="status no">On-site only</span>
+        </div>
+        <h3>Septic</h3>
+        <p>No community sewer. Each lot needs its own on-site system, with a site assessment, design by a Registered Onsite Wastewater Practitioner or engineer, and filing with Island Health.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-top">
+          <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21c4 0 6-3 6-6 0-4-4-6-4-10-3 2-4 5-4 7-1-1-2-2-2-4-2 2-2 4-2 7 0 3 2 6 6 6z"/></svg></div>
+          <span class="status no">Not available</span>
+        </div>
+        <h3>Natural gas</h3>
+        <p>FortisBC service isn't available; an extension would need a customer contribution of over $50,000. Plan for electric, propane, or wood heat.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-top">
+          <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 20L10 4M19 20L14 4M12 6v2M12 11v2M12 16v2"/></svg></div>
+          <span class="status info">Permit needed</span>
+        </div>
+        <h3>Driveway access</h3>
+        <p>Every lot has access from South Bamfield Road (Lots 6 and 7 through their shared driveway). A residential access permit from the Ministry of Transportation and Transit is needed; one access per home, and a 4.5 m setback from the road for structures.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-top">
+          <div class="svc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 20h18M5 20l4-8 3 4 3-6 4 10"/></svg></div>
+          <span class="status info">Reports available</span>
+        </div>
+        <h3>Ground &amp; hazards</h3>
+        <p>A 2023 geotechnical assessment found the property above the tsunami inundation line and safe for the 13-lot residential use, with foundation recommendations to follow. Each lot needs an on-site stormwater detention pit.</p>
+      </div>
+    </div>
+    <div class="svc-foot">
+      <div class="callout reveal"><strong>Also good to know.</strong> The land was previously harvested timber and is now young regrowth, with slopes ranging from flat to moderate. An abandoned manufactured home sits in the northeast part of the land and the Developer will not be removing it. An archaeological site (DeSg-70) lies between Lots 12 and 13 and is protected under the Heritage Conservation Act.</div>
+      <div class="also reveal">
+        <h4>Supporting reports</h4>
+        <ul>
+          <li>Subdivision Plan EPP141779 and title charges</li>
+          <li>Lewkowich geotechnical hazard assessment (2023)</li>
+          <li>McGill stormwater management plan (2024)</li>
+          <li>Koers water model analysis (2021)</li>
+          <li>Baseline archaeological overview (2022)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AT A GLANCE -->
 <section class="investment">
   <div class="container invest-grid">
     <div class="reveal">
-      <div class="section-label" style="color: var(--sand);">The Investment Case</div>
-      <h2>Coastal land, bought <em>before the rest of the coast</em> finds it.</h2>
-      <p>The Sunshine Coast has been priced for outsiders for two decades. The Gulf Islands, longer than that. Tofino is now the most expensive small town on the Pacific. Bamfield is the last meaningful coastal community on Vancouver Island where titled acreage still trades at a fraction of those numbers.</p>
-      <p>That window is finite. The road is being upgraded. The Marine Sciences Centre is expanding. National park traffic into the trailhead grows every season. Land that is rare, titled, and priced like this does not stay this way.</p>
+      <div class="section-label" style="color: var(--sand);">At a Glance</div>
+      <h2>Titled coastal acreage, <em>ready for your plans.</em></h2>
+      <ul class="glance-list">
+        <li>Thirteen fee-simple lots, titles issued April 20, 2026 — no mortgages or liens registered</li>
+        <li>Zoned RA2 for a single-family home, home occupations, and accessory buildings</li>
+        <li>Year-round road access; the Bamfield Road was fully chip-sealed in 2023</li>
+        <li>Water, BC Hydro, and TELUS available along South Bamfield Road</li>
+        <li>Above the tsunami inundation line, per the 2023 geotechnical assessment</li>
+      </ul>
     </div>
     <div class="stats reveal">
       <div class="stat">
         <div class="value">13</div>
-        <div class="label">Titled Lots<br/>Fee-Simple Registered</div>
+        <div class="label">Titled Lots<br/>Fee Simple</div>
       </div>
       <div class="stat">
-        <div class="value">15<sup>ac</sup></div>
-        <div class="label">Total Acreage<br/>Across Portfolio</div>
+        <div class="value">15.4<sup>ac</sup></div>
+        <div class="label">Combined Lot Area<br/>Plan EPP141779</div>
       </div>
       <div class="stat">
         <div class="value">$428<sup>K</sup></div>
-        <div class="label">Entry Price<br/>From, CAD</div>
+        <div class="label">Starting Price<br/>CAD*</div>
       </div>
       <div class="stat">
-        <div class="value">RA1<br/>RA2</div>
+        <div class="value">RA2</div>
         <div class="label">Acreage Residential<br/>Single Family</div>
       </div>
     </div>
@@ -1687,23 +1925,40 @@
 <!-- CTA -->
 <section class="cta" id="contact">
   <div class="cta-mark">
-    <img src="assets/logo.png" alt="" />
+    <img src="assets/logo.png" alt="" width="90" height="90" loading="lazy" />
   </div>
   <h2>Inquire <em>privately.</em></h2>
-  <p>Register your interest to receive the Disclosure Statement when filed, along with title documents, covenant analysis, and viewing arrangements.</p>
-  <a href="mailto:info@bamfieldcoast.com?subject=The%20Bamfield%20Coast%20Lots%20%E2%80%94%20Inquiry" class="cta-btn">Request Information Package</a>
+  <p>Register your interest to receive the Disclosure Statement once it is filed, along with title documents, the supporting reports, and viewing arrangements.</p>
+  <a href="mailto:info@bamfieldcoast.com?subject=The%20Bamfield%20Coast%20Lots%20%E2%80%94%20Inquiry" class="cta-btn">Register your interest</a>
   <a href="mailto:info@bamfieldcoast.com" class="cta-email">info@bamfieldcoast.com</a>
+
+  <div class="contact-cards">
+    <div class="contact-card">
+      <h5>Listing Brokerage</h5>
+      <div class="name">John Stilinovic</div>
+      <p>RE/MAX Mid-Island Realty<br/>4201 Johnston Road, Port Alberni, BC V9Y 5M8<br/><a href="tel:+12507207261">250-720-7261</a></p>
+    </div>
+    <div class="contact-card">
+      <h5>Developer</h5>
+      <div class="name">1326247 B.C. Ltd.</div>
+      <p>#301 – 8623 Granville Street<br/>Vancouver, BC V6P 5A2<br/><a href="mailto:info@bamfieldcoast.com">info@bamfieldcoast.com</a></p>
+    </div>
+  </div>
 </section>
 
 <!-- DISCLOSURE -->
 <section class="disclosure" id="disclosure">
   <div class="disclosure-inner">
     <div class="disclosure-label">Important Notice</div>
-    <h3>This website is for information purposes only and does not constitute an offer for sale.</h3>
-    <p>The development units shown on this website are being marketed in British Columbia and are subject to the <em>Real Estate Development Marketing Act</em> (REDMA). No offer to sell, agreement of purchase and sale, or solicitation of an offer to buy any lot will be made except by way of a Disclosure Statement filed with the Superintendent of Real Estate (BC Financial Services Authority).</p>
-    <p>Prospective purchasers should review the Disclosure Statement, which contains material facts about the development, before entering into any agreement. Under section 21 of REDMA, a purchaser of a development unit has a right to rescind a purchase agreement within seven days after the later of the date the agreement was entered into and the date the purchaser received the Disclosure Statement.</p>
-    <p>All renderings, maps, dimensions, prices, descriptions of nearby amenities, and timing references on this website are illustrative and indicative only, are subject to change without notice, and are not warranted. Lot dimensions, areas, and locations are approximate and are subject to final survey and title. Photographs depict the surrounding region and are not representations of any specific lot. The developer reserves the right to modify lot configurations, pricing, and availability prior to filing of the Disclosure Statement. E. &amp; O.E.</p>
-    <p>The Bamfield Coast Lots are offered by 1326247 B.C. Ltd. Victoria Land Title District.</p>
+    <h3>This website is for information only and is not an offer for sale. No offer to sell may be made until a Disclosure Statement has been filed.</h3>
+    <div class="ds-box">
+      <div><small>Disclosure Statement</small><span>Not yet filed</span></div>
+      <div><small>To be filed with</small><span>Superintendent of Real Estate (BCFSA)</span></div>
+      <div><small>Filed under</small><span>Real Estate Development Marketing Act (BC)</span></div>
+    </div>
+    <p>The Bamfield Coast Lots will be offered by 1326247 B.C. Ltd. (the "Developer"), through its brokerage, RE/MAX Mid-Island Realty. No offer to sell, agreement of purchase and sale, or solicitation of an offer to buy any lot will be made until a Disclosure Statement has been filed with the Superintendent of Real Estate (BC Financial Services Authority) under the <em>Real Estate Development Marketing Act</em>. Once filed, a copy must be given to every purchaser before entering into an agreement, and prospective purchasers should read it in full. If anything on this website differs from the Disclosure Statement, the Disclosure Statement governs.</p>
+    <p>Under section 21 of the Act, a purchaser may rescind (cancel) a purchase agreement by serving written notice on the Developer or the Developer's brokerage within 7 days after the later of the date the agreement was entered into and the date the purchaser received a copy of the Disclosure Statement.</p>
+    <p>Maps, site plans, and descriptions of nearby amenities, travel times, and services are illustrative and may change. Lot areas are from the registered titles under Plan EPP141779. Prices and availability are subject to change without notice. Photographs depict the surrounding region and are not images of any specific lot. E. &amp; O.E.</p>
   </div>
 </section>
 
@@ -1712,10 +1967,10 @@
   <div class="footer-grid">
     <div>
       <div class="footer-mark">
-        <img src="assets/logo.png" alt="" />
+        <img src="assets/logo.png" alt="" width="44" height="44" loading="lazy" />
         <div class="wordmark">The Bamfield Coast Lots</div>
       </div>
-      <p>Thirteen fee-simple acreage lots on South Bamfield Road, Vancouver Island, BC. Victoria Land Title District. Offered by 1326247 B.C. Ltd.</p>
+      <p>Thirteen fee-simple acreage lots on South Bamfield Road, Bamfield, BC. Plan EPP141779, Section 18, Township 1, Barclay District. Offered by 1326247 B.C. Ltd.</p>
     </div>
     <div>
       <h5>Explore</h5>
@@ -1724,7 +1979,7 @@
         <li><a href="#nearby">Nearby</a></li>
         <li><a href="#access">Getting Here</a></li>
         <li><a href="#lots">The Lots</a></li>
-        <li><a href="#contact">Inquire</a></li>
+        <li><a href="#services">Servicing</a></li>
         <li><a href="#disclosure">Disclosure</a></li>
       </ul>
     </div>
@@ -1732,35 +1987,46 @@
       <h5>Contact</h5>
       <ul>
         <li><a href="mailto:info@bamfieldcoast.com">info@bamfieldcoast.com</a></li>
-        <li>Vancouver, BC</li>
-        <li>By appointment</li>
+        <li>John Stilinovic · <a href="tel:+12507207261">250-720-7261</a></li>
+        <li>RE/MAX Mid-Island Realty</li>
+        <li>Viewings by appointment</li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <div>© 2026 The Bamfield Coast Lots. This is not an offer for sale. Any such offer may only be made by Disclosure Statement under the Real Estate Development Marketing Act (BC). E. &amp; O.E.</div>
-    <div>1326247 B.C. Ltd.</div>
+    <div>© 2026 The Bamfield Coast Lots. Not an offer for sale. An offer may only be made by Disclosure Statement under the Real Estate Development Marketing Act (BC). E. &amp; O.E.</div>
+    <div>1326247 B.C. Ltd. · RE/MAX Mid-Island Realty</div>
   </div>
 </footer>
 
 <script>
-  // Nav scroll state
+  document.documentElement.classList.add('js');
   const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu
+  const toggle = document.getElementById('menuToggle');
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
   });
+  document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
+  }));
 
   // Reveal on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  }
 </script>
 
 </body>
